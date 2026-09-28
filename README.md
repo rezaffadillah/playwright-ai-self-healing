@@ -105,6 +105,12 @@ The following example demonstrates an actual self-healing test execution.
 
 The sample test intentionally uses invalid locators for the login page. The framework detects the failed locator and automatically resolves the intended elements.
 
+### Execution Evidence
+
+The following output is from an actual test execution where invalid locators were automatically recovered by the self-healing engine.
+
+![Self-Healing Execution Evidence](docs/images/self-healing-execution.png)
+
 ### Original Interaction
 
 ```csharp
