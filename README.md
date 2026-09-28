@@ -99,6 +99,53 @@ This allows the automation flow to recover from certain locator or UI changes wi
 
 ---
 
+## Self-Healing Execution Example
+
+The following example demonstrates an actual self-healing test execution.
+
+The sample test intentionally uses invalid locators for the login page. The framework detects the failed locator and automatically resolves the intended elements.
+
+### Original Interaction
+
+```csharp
+private const string InpUsername = "#Reza-project-username";
+private const string InpPassword = "#Reza-project-password";
+private const string BtnLogin = "#login-button-wrong";
+```
+
+### Runtime Healing
+
+```text
+[HEALING TRIGGERED - WEB]
+[HEALED EXACT] [data-test='username']
+[TYPE] Attempt 1
+[INPUT OK] standard_user
+
+[HEALING TRIGGERED - WEB]
+[HEALED EXACT] [data-test='password']
+[TYPE] Attempt 1
+[INPUT OK] secret_sauce
+
+[HEALING TRIGGERED - WEB]
+[HEALED EXACT] [data-test='login-button']
+[CLICK] Attempt 1
+[NAVIGATION SUCCESS]
+```
+
+### Test Result
+
+```text
+Test Run Successful.
+Total tests: 1
+Passed: 1
+Failed: 0
+Skipped: 0
+```
+
+This demonstrates the framework recovering the intended elements even though the original locators are invalid.
+
+---
+
 ## AI Self-Healing Approach
 
 The framework uses custom decision logic to evaluate potential replacement elements.
