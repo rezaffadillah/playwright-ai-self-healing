@@ -1,0 +1,27 @@
+# .NET build output
+**/bin/
+**/obj/
+
+# Visual Studio
+.vs/
+
+# VS Code
+.vscode/
+
+# Test results
+**/TestResults/
+
+# Playwright reports
+**/playwright-report/
+
+# Allure
+**/allure-results/
+**/allure-report/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# User-specific files
+*.user
+*.suo
